@@ -1,0 +1,9 @@
+git init
+git status
+git add .
+git rm -r --cached node_modules
+git commit -m " "
+git commit -a " "
+git push
+
+//
