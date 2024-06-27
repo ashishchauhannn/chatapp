@@ -1,9 +1,14 @@
+
+
+
 git init
 git status
 git add .
-git rm -r --cached node_modules
+git rm -r --cached node_modules --> if you want to remove any of these files.
 git commit -m " "
-git commit -a " "
+git remove --> to remove all the files from git 
+before pushing your code make sure  to  add commit 
+
 git push
 
 //

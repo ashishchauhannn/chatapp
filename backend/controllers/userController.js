@@ -10,23 +10,23 @@ export const register = async (req, res) => {
     try {
         const { fullname, username, password, confirmpassword, gender } = req.body;
         if (!fullname || !username || !password || !confirmpassword || !gender) {
-            return res.status(400).json({ mesage: "All feilds are required" })
+            return res.status(400).json({ message: "All feilds are required" })
         }
 
         if (password !== confirmpassword) {
-            return res.status(400).json({ mesage: "Password not matched!" })
+            return res.status(400).json({ message: "Password not matched!" })
         }
 
         const user = await User.findOne({ username })
         if (user) {
-            return res.status(400).json({ mesage: "username is already used" })
+            return res.status(400).json({ message: "username already exist. " })
         }
 
         const hashpassword = await bcrypt.hash(password, 10)// this is used for hasing the password
 
         //Profilephoto api and implimentation
-        const maleprofile = `https://avatar.iran.liara.run/public/boy?${username}`
-        const femaleprofile = `https://avatar.iran.liara.run/public/girl?${username}`
+        const maleprofile = `https://i.pinimg.com/736x/9a/bb/94/9abb9492b3743a8d65b3052b969a9221.jpg?${username}`
+        const femaleprofile = `https://i.pinimg.com/736x/65/ee/be/65eebeb8022296c9eeb801934325904b.jpg? ${username}`
         await User.create({
             fullname,
             username,
@@ -35,8 +35,10 @@ export const register = async (req, res) => {
             gender
         })
         console.log('account created successfully');
+
         return res.status(201).json({
-            mesage: "account created successfully"
+            message: `account created successfully`,
+            success: true
 
         })
 
@@ -80,7 +82,7 @@ export const login = async (req, res) => {
         const name = user.fullname;
         // these code print values in client side....
         return res.status(200).cookie("token", token, { maxAge: 1 * 24 * 60 * 60 * 1000, httpOnly: true }).json({
-            message: `login successfull ${name}`,
+            message: `Wellcome ${name}`,
             _id: user._id,
             username: user.username,
             fullname: user.fullname,
