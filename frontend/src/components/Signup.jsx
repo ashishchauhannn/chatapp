@@ -111,7 +111,7 @@ const Signup = () => {
                         </div>
                     </div>
 
-                    <p className='text-center my-2 font-bold'>Already have an account? <Link to="/login"> login </Link></p>
+                    <p className='text-center my-2 '>Already have an account? <Link className="font-semibold" to="/login"> login </Link></p>
                     <div>
                         <button type='submit' className='btn btn-block btn-md mt-2 border border-slate-700 font-bold'>Singup</button>
                     </div>
