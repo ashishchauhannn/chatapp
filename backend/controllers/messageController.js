@@ -24,7 +24,10 @@ export const sendMessage = async (req, res) => {
             gotConvo.messagess.push(newMessage._id);
         }
         await gotConvo.save();
-        return res.status(201).json({ message: "Message send successfully." })
+
+        return res.status(201).json({
+            newMessage
+        })
 
     }
     catch (error) {

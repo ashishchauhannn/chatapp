@@ -25,8 +25,8 @@ export const register = async (req, res) => {
         const hashpassword = await bcrypt.hash(password, 10)// this is used for hasing the password
 
         //Profilephoto api and implimentation
-        const maleprofile = `https://i.pinimg.com/736x/9a/bb/94/9abb9492b3743a8d65b3052b969a9221.jpg?${username}`
-        const femaleprofile = `https://i.pinimg.com/736x/65/ee/be/65eebeb8022296c9eeb801934325904b.jpg? ${username}`
+        const maleprofile = `https://i.pinimg.com/736x/9a/bb/94/9abb9492b3743a8d65b3052b969a9221.jpg? ${username}`
+        const femaleprofile = `https://i.pinimg.com/736x/d4/47/ac/d447acd5bb05fb1b469e354b7b093019.jpg? ${username}`
         await User.create({
             fullname,
             username,
