@@ -78,7 +78,7 @@ export const login = async (req, res) => {
 
         const token = await jwt.sign(tokenData, process.env.JWT_SECRET_KEY, { expiresIn: '1d' });
 
-        console.log('login successfully!');
+        // console.log('login successfully!');
         const name = user.fullname;
         // these code print values in client side....
         return res.status(200).cookie("token", token, { maxAge: 1 * 24 * 60 * 60 * 1000, httpOnly: true }).json({

@@ -6,9 +6,10 @@ import cors from 'cors';
 import dotenv from "dotenv";
 import messageRoute from './routes/messageRoute.js';
 import userRoute from './routes/userRoute.js';
+import { app, server } from "./socket/socket.js";
 dotenv.config({})
-const app = express();
-const PORT = process.env.PORT || 8080;
+// const app = express();
+const PORT = process.env.PORT || 5000;
 
 
 // middleware 
@@ -26,10 +27,8 @@ app.use(cors(corsOption));
 app.use("/api/v1/user", userRoute)
 app.use("/api/v1/message", messageRoute)
 
-
-
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     db();
-    console.log("server running.")
+    console.log(`server running ${PORT}`)
 })
 
