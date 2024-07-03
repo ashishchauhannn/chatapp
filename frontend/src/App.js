@@ -30,7 +30,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (authUser) {
-      const socket = io('https://chatapp-ovlb.onrender.com', {
+      const socket = io('http://localhost:8080', {
         query: {
           userId: authUser._id
         }
