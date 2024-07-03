@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 import { BiSearchAlt2 } from "react-icons/bi"
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { setOtherUsers } from '../redux/userSlice'
+import { setAuthUser, setOtherUsers } from '../redux/userSlice'
 import OtherUsers from './OtherUsers'
 const Sidebar = () => {
     const [search, setSearch] = useState("");
@@ -13,10 +13,10 @@ const Sidebar = () => {
     const dispatch = useDispatch();
     const logoutHandler = async () => {
         try {
-
             const res = await axios.get(`http://localhost:8080/api/v1/user/logout`)
             navigate("/login")
             toast.success(res.data.message)
+            dispatch(setAuthUser(null))
         } catch (error) {
 
         }
