@@ -1,8 +1,6 @@
-# FRONTEND
+## FRONTEND
 npm start
 
 
-
-
-# BACKEND
+## BACKEND
 npm run dev
