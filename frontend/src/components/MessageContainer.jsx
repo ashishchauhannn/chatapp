@@ -1,11 +1,10 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Messages from './Messages'
 import Sendinput from './Sendinput'
 const MessageContainer = () => {
 
     const { selectedUser, authUser, onlineUsers } = useSelector(store => store.user);
-    const dispatch = useDispatch();
 
     const isOnline = onlineUsers?.includes(selectedUser?._id)
     // useEffect(() => {
@@ -34,9 +33,9 @@ const MessageContainer = () => {
                     </div>
                 ) : (
                     <div className='md:min-w-[550px] flex flex-col justify-center items-center '>
-                        <h1 className='text-2xl font-semibold text-blue-100'> Hey ,</h1>
+                        <h1 className='text-2xl font-semibold text-blue-100'> Hey &#x1F44B;, </h1>
                         <h1 className='text-2xl font-semibold text-blue-100'> it's {authUser?.fullname}</h1>
-                        <h1 className='font-normal  text-blue-100'> Let's do gossips.</h1>
+                        <h1 className='font-normal  text-blue-100'> Let's do gossips 💬.</h1>
                     </div>
                 )
             }

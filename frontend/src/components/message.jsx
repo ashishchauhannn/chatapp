@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux';
 const Message = ({ message }) => {
     const scroll = useRef();
     const { authUser, selectedUser } = useSelector(store => store.user);
+
+
+
     useEffect(() => {
         scroll.current?.scrollIntoView({ behavior: "smooth" })
     }, [message]);
@@ -16,7 +19,7 @@ const Message = ({ message }) => {
             <div className="chat-header">
                 <time className="text-xs opacity-100 text-white">12:45</time>
             </div>
-            <div className={`chat-bubble  ${message?.senderId !== authUser?._id ? 'bg-gray-400 text-black' : ''}`}>{message?.message}</div>
+            <div className={`chat-bubble  ${message?.senderId !== authUser?._id ? 'bg-gray-300 text-zinc-900' : ''}`}>{message?.message}</div>
 
         </div>
     )

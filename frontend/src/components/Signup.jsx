@@ -46,11 +46,11 @@ const Signup = () => {
         <div className="min-w-96 mx-auto">
 
             <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100'>
-                <h1 className='text-3xl font-bold text-center'>Signup</h1>
+                <h1 className='text-3xl font-bold text-center text-slate-200'>Signup</h1>
                 <form onSubmit={onSubmitHandler} action="">
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base label-text'>Name</span>
+                            <span className='text-base font-bold text-gray-300 label-text'>Name</span>
                         </label>
                         <input
                             onChange={(e) => setUser({ ...user, fullname: e.target.value })}
@@ -61,7 +61,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base label-text'>Username</span>
+                            <span className='text-base font-bold text-gray-300 label-text'>Username</span>
                         </label>
                         <input
                             onChange={(e) => setUser({ ...user, username: e.target.value })}
@@ -72,7 +72,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base label-text'>Password</span>
+                            <span className='text-base font-bold text-gray-300 label-text'>Password</span>
                         </label>
                         <input
                             onChange={(e) => setUser({ ...user, password: e.target.value })}
@@ -83,7 +83,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base label-text'>Confirm Password</span>
+                            <span className='text-base font-bold text-gray-300 label-text'>Confirm Password</span>
                         </label>
                         <input
                             onChange={(e) => setUser({ ...user, confirmpassword: e.target.value })}
@@ -92,7 +92,7 @@ const Signup = () => {
                             type="password"
                             placeholder='confirm password' />
                     </div>
-                    <div className='flex items-center my-4'>
+                    <div className='flex font-semibold text-gray-300 items-center my-4'>
                         <div className='flex items-center'>
                             <p>Male</p>
                             <input
@@ -111,9 +111,9 @@ const Signup = () => {
                         </div>
                     </div>
 
-                    <p className='text-center my-2 '>Already have an account? <Link className="font-semibold" to="/login"> login </Link></p>
+                    <p className='text-center my-2 font-semibold text-gray-300 '>Already have an account? <Link className="font-semibold" to="/login"> login </Link></p>
                     <div>
-                        <button type='submit' className='btn btn-block btn-md mt-2 border border-slate-700 font-bold'>Singup</button>
+                        <button type='submit' className='btn btn-block btn-md mt-2 border  bg-black  border-slate-700 font-bold'>Singup</button>
                     </div>
 
 
