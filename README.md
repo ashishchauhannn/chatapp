@@ -1,2 +1,8 @@
-#for frontend use npm start
-#for backend use npm run dev
+# FRONTEND
+npm start
+
+
+
+
+# BACKEND
+npm run dev
