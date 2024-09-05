@@ -15,7 +15,7 @@ const MessageContainer = () => {
             {
                 selectedUser !== null ? (
                     <div className='md:min-w-[550px] flex flex-col'>
-                        <div className="flex gap-2 items-center bg-slate-700  text-slate-300 font-semibold px-4 py-2 mb-2">
+                        <div className="flex gap-3 items-center bg-slate-700  text-slate-300 font-semibold px-4 py-2 mb-2">
                             <div className={`avatar ${isOnline ? 'online' : ''}`}>
                                 <div className='w-12 rounded-full'>
                                     <img src={selectedUser?.profilephoto} alt="userprofile" srcset="" />
@@ -33,9 +33,9 @@ const MessageContainer = () => {
                     </div>
                 ) : (
                     <div className='md:min-w-[550px] flex flex-col justify-center items-center '>
-                        <h1 className='text-2xl font-semibold text-blue-100'> Hey &#x1F44B;, </h1>
-                        <h1 className='text-2xl font-semibold text-blue-100'> it's {authUser?.fullname}</h1>
-                        <h1 className='font-normal  text-blue-100'> Let's do gossips 💬.</h1>
+                        <h1 className='text-2xl font-semibold text-blue-100'> Hey!</h1>
+                        <h1 className='text-2xl font-semibold text-blue-100'>  {authUser?.fullname}</h1>
+                        <h1 className='font-normal  text-blue-100'> Let's start gossips 💬.</h1>
                     </div>
                 )
             }
